@@ -1,0 +1,6 @@
+SELECT dept_manager.emp_no, employees.first_name, employees.last_name, salaries.salary 
+FROM employees 
+INNER JOIN dept_manager ON dept_manager.emp_no = employees.emp_no 
+INNER JOIN salaries ON salaries.emp_no = dept_manager.emp_no 
+WHERE dept_manager.to_date > '1985-12-31' AND dept_manager.from_date < '1987-01-01' 
+ORDER BY salaries.salary DESC LIMIT 1;
